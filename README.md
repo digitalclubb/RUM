@@ -1,17 +1,22 @@
 # RUM
 
-h2. Usage
+A User Timing polyfill that will enable tracking in Google Analytics of custom timing events.
 
-Include Google Analytics (enable Beacon mode)
-Include RUM JS on the page.
+## Usage
+
+* Include Google Analytics (enable Beacon mode)
+* Include RUM JS on the page.
+* Include RUM marks where applicable
 
 
-```<script>
+```html
+<script>
 	RUM.mark( 'css_load_tmgchannels' );
-</script>```
+</script>
+```
 
-h4. Notes
+#### Notes
 
 * Marks to be named: `css_load_tmgchannels` -> category_variable_label
-* getClientId() currently reads an Omniture cookie. This can be updated to generate random client ID.
-* Supports marks and measures. Sends Marks to Google Analytics.
+* `getClientId()` currently reads an Omniture cookie. This can be updated to generate random client ID.
+* Supports marks and measures. Sends Marks to Google Analytics with `beforeunload` event.
